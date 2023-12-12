@@ -14,6 +14,28 @@ class Rectangle1
 	bool xb = 0, yb = 0;
 	friend RefRec;
 
+
+	void print()
+	{
+		for (size_t i = 0; i < yO; i++)
+		{
+			cout << endl;
+		}
+
+		for (size_t i = 0; i < y; i++)
+		{
+			for (size_t i = 0; i < xO; i++)
+			{
+				cout << "   ";
+			}
+			for (size_t j = 0; j < x; j++)
+			{
+				cout << "#  ";
+			}
+			cout << endl;
+		}
+	}
+
 public:
 
 	Rectangle1(int x, int y, int xO, int yO) :x{ x }, y{ y }, xO{ xO }, yO{ yO } {}
@@ -41,8 +63,6 @@ public:
 		return ost;
 	}
 
-	friend void print(Rectangle1& rec);
-
 	friend istream& operator >> (istream& is, Rectangle1& rec)
 	{
 		cout << "Input x: ";
@@ -61,10 +81,10 @@ public:
 	}
 
 
-	//void operator += (int n) {
-	//	x += n;
-	//	y += n;
-	//}
+	void operator += (int n) {
+		x += n;
+		y += n;
+	}
 	void perm(int xO, int yO) {
 		this->xO += xO;
 		this->yO += yO;
@@ -111,27 +131,12 @@ public:
 class RefRec
 {
 public:
-	friend void print(Rectangle1& rec);
+	Rectangle1 rec;
+
+	void prt()
+	{
+		rec.print();
+	}
 };
 
 
-void print(Rectangle1& rec)
-{
-	for (size_t i = 0; i < rec.yO; i++)
-	{
-		cout << endl;
-	}
-
-	for (size_t i = 0; i < rec.y; i++)
-	{
-		for (size_t i = 0; i < rec.xO; i++)
-		{
-			cout << "   ";
-		}
-		for (size_t j = 0; j < rec.x; j++)
-		{
-			cout << "#  ";
-		}
-		cout << endl;
-	}
-}

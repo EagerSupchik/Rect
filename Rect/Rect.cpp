@@ -6,6 +6,7 @@ class Point2;
 class Point {
 	int x = 6;
 	friend Point2;
+
 	void print() {
 		cout << x << endl;
 	}
@@ -46,14 +47,13 @@ void operator +=(Point2& point2, int n) {
 
 int main()
 {
-	Rectangle1 rec;
-	RefRec rec1;
-	cin >> rec;
+	RefRec ref;
+	cin >> ref.rec;
 	while (true)
 	{
 		system("cls");
-		print(rec);
-		rec();
+		ref.prt();
+		ref.rec();
 		Sleep(500);
 	}
 
