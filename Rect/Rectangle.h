@@ -130,9 +130,8 @@ public:
 
 class RefRec
 {
-public:
 	Rectangle1 rec;
-
+public:
 	void prt()
 	{
 		rec.print();

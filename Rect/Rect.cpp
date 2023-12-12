@@ -47,14 +47,18 @@ void operator +=(Point2& point2, int n) {
 
 int main()
 {
+	Rectangle1 rec;
 	RefRec ref;
-	cin >> ref.rec;
-	while (true)
+	cin >> rec;
+	int i = 0;
+	while (i < 5)
 	{
 		system("cls");
-		ref.prt();
-		ref.rec();
+		cout << rec;
+		rec();
 		Sleep(500);
+		i++;
 	}
 
+	ref.prt();
 }
